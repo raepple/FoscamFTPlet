@@ -16,12 +16,13 @@ import org.apache.ftpserver.ftplet.FtpException;
 import org.apache.ftpserver.ftplet.FtpRequest;
 import org.apache.ftpserver.ftplet.FtpSession;
 import org.apache.ftpserver.ftplet.FtpletResult;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.glassfish.jersey.client.authentication.HttpAuthenticationFeature;
 
 public class FoscamFtplet extends DefaultFtplet {
 	
-	private Logger log = Logger.getLogger(FoscamFtplet.class);
+	private static Logger log = LogManager.getLogger(FoscamFtplet.class);
 	
 	public FoscamFtplet() {
 		super();		
@@ -69,8 +70,6 @@ public class FoscamFtplet extends DefaultFtplet {
 		} else {
 			log.debug("Disconnect session");
 			return FtpletResult.DISCONNECT;
-		}
-
-        
+		}   
     }
 }
